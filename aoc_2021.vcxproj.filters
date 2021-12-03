@@ -18,6 +18,18 @@
     <ClCompile Include="aoc_2021.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="AOC_Solver.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="day3.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="day2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="day1.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="day1.txt">
@@ -29,5 +41,13 @@
     <Text Include="day3.txt">
       <Filter>Resource Files</Filter>
     </Text>
+    <Text Include="day1_test.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AOC_Solver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

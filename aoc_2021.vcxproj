@@ -140,11 +140,19 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="aoc_2021.cpp" />
+    <ClCompile Include="AOC_Solver.cpp" />
+    <ClCompile Include="day1.cpp" />
+    <ClCompile Include="day2.cpp" />
+    <ClCompile Include="day3.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="day1.txt" />
+    <Text Include="day1_test.txt" />
     <Text Include="day2.txt" />
     <Text Include="day3.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AOC_Solver.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
