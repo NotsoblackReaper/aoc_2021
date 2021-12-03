@@ -12,3 +12,14 @@ std::vector<std::string> input::data_as_string(const char* filepath)
 	}
 	return data;
 }
+
+std::vector<int> input::data_as_int(const char* filepath)
+{
+	std::ifstream MyReadFile(filepath);
+	std::string input;
+	std::vector<int>data{};
+	while (std::getline(MyReadFile, input)) {
+		data.push_back(std::stoi(input));
+	}
+	return data;
+}

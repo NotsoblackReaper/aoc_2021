@@ -1,17 +1,52 @@
 #include "AOC_Solver.h"
 #include <iostream>
+#include <chrono>
+#include <tuple>
+
+auto print = [](const std::string& name, const uint64_t part1, double elapsed1, const uint64_t part2, double elapsed2) {
+    std::cout << "\t~~~ " << name << " ~~~"
+        << "\nPart 1: " << part1 << " elapsed time " << elapsed1 << "us"
+        << "\nPart 2: " << part2 << " elapsed time " << elapsed2 << "us\n\n";
+};
+
+template<typename F, typename I>
+std::tuple<int64_t, double> Runner(F func, std::vector<I> input) {
+    auto start = std::chrono::high_resolution_clock::now();
+    int64_t result = func(input);
+    auto end = std::chrono::high_resolution_clock::now();
+    auto elapsed = std::chrono::duration_cast<std::chrono::microseconds>(end - start).count();
+    return std::make_tuple(result, elapsed);
+}
+
+void Day1(std::vector<int> data) {
+    auto [result1, elapsed1] = Runner(aoc::day1::part_1, data);
+    auto [result2, elapsed2] = Runner(aoc::day1::part_2, data);
+    print(__func__, result1, elapsed1, result2, elapsed2);
+}
+
+void Day2(std::vector<std::string> data) {
+    auto [result1, elapsed1] = Runner(aoc::day2::part_1, data);
+    auto [result2, elapsed2] = Runner(aoc::day2::part_2, data);
+    print(__func__, result1, elapsed1, result2, elapsed2);
+}
+
+void Day3(std::vector<std::string> data) {
+    auto [result1, elapsed1] = Runner(aoc::day3::part_1, data);
+    auto [result2, elapsed2] = Runner(aoc::day3::part_2, data);
+    print(__func__, result1, elapsed1, result2, elapsed2);
+}
+
+void Day4(std::vector<std::string> data) {
+    auto [result1, elapsed1] = Runner(aoc::day4::part_1, data);
+    auto [result2, elapsed2] = Runner(aoc::day4::part_2, data);
+    print(__func__, result1, elapsed1, result2, elapsed2);
+}
 
 int main()
 {
-	std::cout << "AoC 2021 Solutions:";
-	std::cout << "\n---Day1:---\n" <<
-		"Part 1: " << aoc_solutions::day1::part_1(input::data_as_string("day1.txt"))
-		<< "\nPart 1: " << aoc_solutions::day1::part_2(input::data_as_string("day1.txt"));
-	std::cout << "\n---Day2:---\n" <<
-		"Part 1: " << aoc_solutions::day2::part_1(input::data_as_string("day2.txt"))
-		<< "\nPart 1: " << aoc_solutions::day2::part_2(input::data_as_string("day2.txt"));
-	std::cout<<"\n---Day3:---\n"<<
-		"Part 1: "<<aoc_solutions::day3::part_1(input::data_as_string("day3.txt"))
-		<<"\nPart 2: "<< aoc_solutions::day3::part_2(input::data_as_string("day3.txt"));
+    Day1(input::data_as_int("day1.txt"));
+    Day2(input::data_as_string("day2.txt"));
+    Day3(input::data_as_string("day3.txt"));
+    Day4(input::data_as_string("day4.txt"));
 }
 

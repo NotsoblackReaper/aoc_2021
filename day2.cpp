@@ -1,31 +1,28 @@
 #include "AOC_Solver.h"
 
-int64_t aoc_solutions::day2::part_1(const std::vector<std::string>input)
+int64_t aoc::day2::part_1(const std::vector<std::string>& input)
 {
 	int down{ 0 }, horizontal{ 0 };
 
-	for (auto line : input) {
-		if (line.front() == 'f') {
-			horizontal += line.at(8) - 48;
-		}
-		if (line.front() == 'd')down += line.at(5) - 48;
-		if (line.front() == 'u')down -= line.at(3) - 48;
+	for (auto& line : input) {
+		if (line[0] == 'f')			horizontal += line[8] - 48;
+		else if (line[0] == 'd')	down += line[5] - 48;
+		else						down -= line[3] - 48;
 	}
 	return down * horizontal;
 }
 
-int64_t aoc_solutions::day2::part_2(const std::vector<std::string>input)
+int64_t aoc::day2::part_2(const std::vector<std::string>& input)
 {
 	int down{ 0 }, horizontal{ 0 }, aim{ 0 };
 
-	for (auto line:input) {
-		if (line.front()=='f') {
-			int x = line.at(8) - 48;
-			horizontal += x;
-			down += x * aim;
+	for (auto& line:input) {
+		if (line[0] =='f') {
+			horizontal += line[8] - 48;
+			down += (line[8] - 48) * aim;
 		}
-		if (line.front() == 'd')aim += line.at(5) - 48;
-		if (line.front() == 'u')aim -= line.at(3) - 48;
+		else if (line[0] == 'd')aim += line[5] - 48;
+		else aim -= line[3] - 48;
 	}
 	return down * horizontal;
 }

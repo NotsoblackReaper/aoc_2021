@@ -6,23 +6,30 @@
 
 namespace input {
 	std::vector<std::string> data_as_string(const char*);
+	std::vector<int> data_as_int(const char*);
 }
 
-namespace aoc_solutions
+namespace aoc
 {
 	namespace day1
 	{
-		int64_t part_1(std::vector<std::string>);
-		int64_t part_2(std::vector<std::string>);
+		int64_t part_1(std::vector<int>&);
+		int64_t part_2(std::vector<int>&);
 	}
 
 	namespace day2
 	{
-		int64_t part_1(std::vector<std::string>);
-		int64_t part_2(std::vector<std::string>);
+		int64_t part_1(const std::vector<std::string>&);
+		int64_t part_2(const std::vector<std::string>&);
 	}
 
 	namespace day3
+	{
+		int64_t part_1(std::vector<std::string>&);
+		int64_t part_2(std::vector<std::string>&);
+	}
+
+	namespace day4
 	{
 		int64_t part_1(std::vector<std::string>);
 		int64_t part_2(std::vector<std::string>);
