@@ -44,9 +44,9 @@ void Day4(std::vector<std::string> data) {
 
 int main()
 {
-    Day1(input::data_as_int("day1.txt"));
-    Day2(input::data_as_string("day2.txt"));
-    Day3(input::data_as_string("day3.txt"));
-    Day4(input::data_as_string("day4.txt"));
+    Day1(input::data_as_int("Input/day1.txt"));
+    Day2(input::data_as_string("Input/day2.txt"));
+    Day3(input::data_as_string("Input/day3.txt"));
+    Day4(input::data_as_string("Input/day4.txt"));
 }
 

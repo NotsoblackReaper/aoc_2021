@@ -148,11 +148,10 @@
     <ClCompile Include="day4.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="day1.txt" />
-    <Text Include="day3_test.txt" />
-    <Text Include="day2.txt" />
-    <Text Include="day3.txt" />
-    <Text Include="day4.txt" />
+    <Text Include="Input\day1.txt" />
+    <Text Include="Input\day2.txt" />
+    <Text Include="Input\day3.txt" />
+    <Text Include="Input\day4.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AOC_Solver.h" />

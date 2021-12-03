@@ -35,19 +35,16 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="day1.txt">
+    <Text Include="Input\day1.txt">
       <Filter>Resource Files</Filter>
     </Text>
-    <Text Include="day2.txt">
+    <Text Include="Input\day2.txt">
       <Filter>Resource Files</Filter>
     </Text>
-    <Text Include="day3.txt">
+    <Text Include="Input\day3.txt">
       <Filter>Resource Files</Filter>
     </Text>
-    <Text Include="day3_test.txt">
-      <Filter>Resource Files</Filter>
-    </Text>
-    <Text Include="day4.txt">
+    <Text Include="Input\day4.txt">
       <Filter>Resource Files</Filter>
     </Text>
   </ItemGroup>
