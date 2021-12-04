@@ -31,8 +31,14 @@ namespace aoc
 
 	namespace day4
 	{
-		int64_t part_1(std::vector<std::string>);
-		int64_t part_2(std::vector<std::string>);
+		int64_t part_1(const std::vector<std::string>&);
+		int64_t part_2(const std::vector<std::string>&);
+	}
+
+	namespace day5
+	{
+		int64_t part_1(std::vector<std::string>&);
+		int64_t part_2(std::vector<std::string>&);
 	}
 }
 #endif

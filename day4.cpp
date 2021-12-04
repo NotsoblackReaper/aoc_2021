@@ -1,10 +1,11 @@
-#include <iostream>
 #include <numeric>
 #include <sstream>
 
 #include "AOC_Solver.h"
 
-int64_t aoc::day4::part_1(const std::vector<std::string>input)
+
+
+int64_t aoc::day4::part_1(const std::vector<std::string>& input)
 {
 	std::string number_order = input[0];
 	std::vector<int> numbers{};
@@ -61,7 +62,7 @@ int64_t aoc::day4::part_1(const std::vector<std::string>input)
 	return 0;
 }
 
-int64_t aoc::day4::part_2(const std::vector<std::string>input)
+int64_t aoc::day4::part_2(const std::vector<std::string>& input)
 {
 	std::string number_order = input[0];
 	std::vector<int> numbers{};
@@ -93,18 +94,11 @@ int64_t aoc::day4::part_2(const std::vector<std::string>input)
 
 	for (auto& i : numbers)
 	{
-		//std::cout << "Number: " << i << "\n";
 		for (auto it = boards.begin(); it != boards.end();)
 		{
 			auto it_1 = std::find((*it).begin(), (*it).end(), i);
 			if (it_1 != (*it).end())
 				*it_1 = 0;
-			//int x = 0;
-			//for (auto y : *it)
-			//{
-			//	if (!(x++ % 5))std::cout << "\n";
-			//	std::cout << y << " ";
-			//}std::cout << "\n";
 
 			int sum_hor{ 0 };
 			int sum_ver{ 0 };
@@ -121,8 +115,7 @@ int64_t aoc::day4::part_2(const std::vector<std::string>input)
 				if (!sum_hor || !sum_ver)
 				{
 					winner = true;
-				//std::cout << "^ Winner ^ ------------------\n";
-				break;
+					break;
 				}
 			}
 			if (winner && boards.size() == 1)
