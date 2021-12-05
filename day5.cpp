@@ -3,7 +3,6 @@
 #include <sstream>
 #include <vector>
 #include <numeric>
-
 #include "AOC_Solver.h"
 
 int64_t aoc::day5::part_1(std::vector<std::string>& input)

@@ -5,8 +5,8 @@
 
 auto print = [](const std::string& name, const uint64_t part1, double elapsed1, const uint64_t part2, double elapsed2) {
     std::cout << "\t~~~ " << name << " ~~~"
-        << "\nPart 1: " << part1 << " elapsed time " << elapsed1 << "us"
-        << "\nPart 2: " << part2 << " elapsed time " << elapsed2 << "us\n\n";
+        << "\nPart 1: " << part1 << "\telapsed time " << elapsed1 << "us"
+        << "\nPart 2: " << part2 << "\telapsed time " << elapsed2 << "us\n\n";
 };
 
 template<typename F, typename I>
