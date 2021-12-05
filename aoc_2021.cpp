@@ -62,5 +62,6 @@ int main()
     Day4(input::data_as_string("Input/day4.txt"));
     Day5(input::data_as_string("Input/day5.txt"));
     Day6(input::data_as_string("Input/day6.txt"));
+    return 0;
 }
 

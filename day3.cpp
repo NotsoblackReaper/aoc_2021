@@ -1,7 +1,7 @@
 #include <iostream>
+#include <numeric>
 
 #include "AOC_Solver.h"
-#include <numeric>
 
 int64_t aoc::day3::part_1(std::vector<std::string>&input)
 {

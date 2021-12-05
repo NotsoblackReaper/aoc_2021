@@ -56,7 +56,9 @@
     <Text Include="Input\day5.txt">
       <Filter>Resource Files</Filter>
     </Text>
-    <Text Include="Input\day6.txt" />
+    <Text Include="Input\day6.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AOC_Solver.h">

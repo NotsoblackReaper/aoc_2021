@@ -1,20 +1,18 @@
+#include <array>
 #include <numeric>
 #include <sstream>
 #include <vector>
-#include <regex>
 #include <numeric>
 
 #include "AOC_Solver.h"
-#include <iostream>
-#include <map>
 
 int64_t aoc::day5::part_1(std::vector<std::string>& input)
 {
 	int max = 0;
-	std::vector<int*>lines{};
+	std::vector<std::array<int,4>>lines{};
 	for (auto& line : input){
 		std::stringstream stream(line);
-		auto x = new int[4];
+		std::array<int, 4>x{};
 		int j = 0;
 		for (int k; stream >> k;) {
 			x[j++] = k;
@@ -50,10 +48,10 @@ int64_t aoc::day5::part_1(std::vector<std::string>& input)
 int64_t aoc::day5::part_2(std::vector<std::string>& input)
 {
 	int max = 0;
-	std::vector<int*>lines{};
+	std::vector<std::array<int, 4>>lines{};
 	for (auto& line:input){
 		std::stringstream stream(line);
-		auto x = new int[4];
+		std::array<int, 4>x{};
 		int j = 0;
 		for (int k; stream >> k;) {
 			x[j++] = k;
