@@ -40,5 +40,11 @@ namespace aoc
 		int64_t part_1(std::vector<std::string>&);
 		int64_t part_2(std::vector<std::string>&);
 	}
+
+	namespace day6
+	{
+		int64_t part_1(std::vector<std::string>&);
+		int64_t part_2(std::vector<std::string>&);
+	}
 }
 #endif

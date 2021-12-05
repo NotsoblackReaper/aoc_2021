@@ -48,6 +48,12 @@ void Day5(std::vector<std::string> data) {
     print(__func__, result1, elapsed1, result2, elapsed2);
 }
 
+void Day6(std::vector<std::string> data) {
+    auto [result1, elapsed1] = Runner(aoc::day6::part_1, data);
+    auto [result2, elapsed2] = Runner(aoc::day6::part_2, data);
+    print(__func__, result1, elapsed1, result2, elapsed2);
+}
+
 int main()
 {
     Day1(input::data_as_int("Input/day1.txt"));
@@ -55,5 +61,6 @@ int main()
     Day3(input::data_as_string("Input/day3.txt"));
     Day4(input::data_as_string("Input/day4.txt"));
     Day5(input::data_as_string("Input/day5.txt"));
+    Day6(input::data_as_string("Input/day6.txt"));
 }
 

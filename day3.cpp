@@ -40,7 +40,7 @@ int64_t aoc::day3::part_2(std::vector<std::string>&input)
 		if (oxygen_size == 1)continue;
 
 		int ones = std::accumulate(oxygen.begin(), end_it, 0,
-			[&](int& a, std::string& b) {return a + (b[i] == '1' ? 1 : 0); });
+			[&](int a, std::string& b) {return a + (b[i] == '1' ? 1 : 0); });
 
 		common_bit = (ones > (oxygen_size / 2) ? '1' : '0');
 		if (oxygen_size % 2 == 0 && oxygen_size / 2 == ones)common_bit = '1';
@@ -56,7 +56,7 @@ int64_t aoc::day3::part_2(std::vector<std::string>&input)
 		if (co2_size == 1)continue;
 
 		int ones = std::accumulate(input.begin(), end_it, 0, 
-			[&](int& a, std::string& b) {return a + (b[i] == '1' ? 1 : 0); });
+			[&](int a, std::string& b) {return a + (b[i] == '1' ? 1 : 0); });
 
 		common_bit = (ones > (co2_size / 2) ? '1' : '0');
 		if (co2_size % 2 == 0 && co2_size / 2 == ones)common_bit = '1';
