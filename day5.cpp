@@ -80,7 +80,8 @@ int64_t aoc::day5::part_2(std::vector<std::string>& input)
 				board[x + y1 * max] += 1;
 		}
 		else {
-			int step_x = x1<x2?1:-1, step_y = y1<y2?1:-1;
+			int step_x = x1<x2?1:-1,
+			step_y = y1<y2?1:-1;
 			int lx = x1 < x2 ? x1 : x2,ux = x1 < x2 ? x2 : x1;
 
 			for (int i = 0; lx+i <= ux; i++)

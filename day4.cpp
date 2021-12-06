@@ -22,12 +22,13 @@ int64_t aoc::day4::part_1(const std::vector<std::string>& input)
 	for (int i = 2; i < input.size(); i += 6)
 	{
 		std::vector<int>board{};
+		board.resize(25);
 		for (int j = 0; j < 5; ++j)
 		{
 			std::stringstream stream(input[i + j]);
 			int x = 0;
 			for (int k; stream >> k;) {
-				board.push_back(k);
+				board[j*5+x]=k;
 				if (stream.peek() == ' ')
 					stream.ignore();
 			}
@@ -79,12 +80,13 @@ int64_t aoc::day4::part_2(const std::vector<std::string>& input)
 	for (int i = 2; i < input.size(); i += 6)
 	{
 		std::vector<int>board{};
+		board.resize(25);
 		for (int j = 0; j < 5; ++j)
 		{
 			std::stringstream stream(input[i + j]);
 			int x = 0;
 			for (int k; stream >> k;) {
-				board.push_back(k);
+				board[j*5+x]=k;
 				if (stream.peek() == ' ')
 					stream.ignore();
 			}

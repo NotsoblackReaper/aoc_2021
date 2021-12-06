@@ -3,10 +3,10 @@
 #include <chrono>
 #include <tuple>
 
-auto print = [](const std::string& name, const uint64_t part1, double elapsed1, const uint64_t part2, double elapsed2) {
+auto print = [](const std::string& name, const uint64_t part1, double elapsed1, const uint64_t part2, double elapsed2,double scale_from=1000) {
     std::cout << "\t~~~ " << name << " ~~~"
-        << "\nPart 1: " << part1 << "\telapsed time " << elapsed1 << "us"
-        << "\nPart 2: " << part2 << "\telapsed time " << elapsed2 << "us\n\n";
+        << "\nPart 1: " << part1 << "\telapsed time " << (elapsed1> scale_from ?elapsed1/ scale_from :elapsed1) << (elapsed1 > scale_from ? "ms": "us")
+        << "\nPart 2: " << part2 << "\telapsed time " << (elapsed2 > scale_from ? elapsed2 / scale_from : elapsed2) << (elapsed2 > scale_from ? "ms" : "us") <<"\n\n";
 };
 
 template<typename F, typename I>
