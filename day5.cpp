@@ -7,13 +7,13 @@
 
 int64_t aoc::day5::part_1(std::vector<std::string>& input)
 {
-	int max = 0;
+	int max = 0,lnr=0;
 	std::vector<std::array<int,4>>lines{};
+	lines.resize(input.size());
 	for (auto& line : input){
 		std::stringstream stream(line);
 		std::array<int, 4>x{};
-		int j = 0;
-		for (int k; stream >> k;) {
+		for (int k, j = 0; stream >> k;) {
 			x[j++] = k;
 			if (k > max)max = k;
 			if (stream.peek() == ',')
@@ -21,7 +21,7 @@ int64_t aoc::day5::part_1(std::vector<std::string>& input)
 			else if (stream.peek() == ' ')
 				stream.ignore(4);
 		}
-		lines.push_back(x);
+		lines[lnr++]=x;
 	}
 	++max;
 	std::vector<int>board{};
@@ -46,13 +46,13 @@ int64_t aoc::day5::part_1(std::vector<std::string>& input)
 
 int64_t aoc::day5::part_2(std::vector<std::string>& input)
 {
-	int max = 0;
+	int max = 0, lnr = 0;
 	std::vector<std::array<int, 4>>lines{};
+	lines.resize(input.size());
 	for (auto& line:input){
 		std::stringstream stream(line);
 		std::array<int, 4>x{};
-		int j = 0;
-		for (int k; stream >> k;) {
+		for (int k, j = 0; stream >> k;) {
 			x[j++] = k;
 			if (k > max)max = k;
 			if (stream.peek() == ',')
@@ -60,7 +60,7 @@ int64_t aoc::day5::part_2(std::vector<std::string>& input)
 			else if (stream.peek() == ' ')
 				stream.ignore(4);
 		}
-		lines.push_back(x);
+		lines[lnr++] = x;
 	}
 	++max;
 	std::vector<int>board{};
@@ -80,8 +80,7 @@ int64_t aoc::day5::part_2(std::vector<std::string>& input)
 				board[x + y1 * max] += 1;
 		}
 		else {
-			int step_x = x1<x2?1:-1,
-			step_y = y1<y2?1:-1;
+			int step_x = x1<x2?1:-1,step_y = y1<y2?1:-1;
 			int lx = x1 < x2 ? x1 : x2,ux = x1 < x2 ? x2 : x1;
 
 			for (int i = 0; lx+i <= ux; i++)

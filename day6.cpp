@@ -1,39 +1,25 @@
 #include <array>
 #include <sstream>
+#include <numeric>
 
 #include "AOC_Solver.h"
 
-int64_t aoc::day6::part_1(std::vector<std::string>& input){
+int64_t calculate_fishes(std::string& input,int n){
 	std::array<int64_t, 9>days{};
-	int pos = 0;
-	for (auto& c : input[0]) {
+	int pos{};
+	for (auto& c : input)
 		if (pos++ % 2 == 0)
 			days[c - 48]++;
-	}
 
-	int n = 80;
 	for (int i = 0; i < n; i++)
 		days[(7 + i) % 9] += days[i % 9];
 
-	uint64_t sum{};
-	for (auto& i : days)
-		sum += i;
-	return sum;
+	return std::accumulate(days.begin(), days.end(), 0ll);
+}
+
+int64_t aoc::day6::part_1(std::vector<std::string>& input){
+	return calculate_fishes(input[0], 80);
 }
 int64_t aoc::day6::part_2(std::vector<std::string>& input){
-	std::array<int64_t, 9>days{};
-	int pos = 0;
-	for (auto& c: input[0]) {
-		if(pos++%2==0)
-		days[c-48]++;
-	}
-
-	int n = 256;
-	for (int i = 0; i < n; i++)
-		days[(7 + i) % 9] += days[i % 9];
-
-	int64_t sum{};
-	for (auto& i : days)
-		sum += i;
-	return sum;
+	return calculate_fishes(input[0], 256);
 }
