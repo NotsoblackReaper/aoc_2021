@@ -1,0 +1,12 @@
+"filename", "language", "C++", "XML", "comment", "blank", "total"
+"h:\vs_projects\aoc_2021\AOC_Solver.cpp", "C++", 22, 0, 0, 3, 25
+"h:\vs_projects\aoc_2021\AOC_Solver.h", "C++", 42, 0, 0, 8, 50
+"h:\vs_projects\aoc_2021\aoc_2021.cpp", "C++", 57, 0, 0, 11, 68
+"h:\vs_projects\aoc_2021\aoc_2021.vcxproj", "XML", 0, 171, 0, 0, 171
+"h:\vs_projects\aoc_2021\day1.cpp", "C++", 23, 0, 0, 2, 25
+"h:\vs_projects\aoc_2021\day2.cpp", "C++", 24, 0, 0, 5, 29
+"h:\vs_projects\aoc_2021\day3.cpp", "C++", 56, 0, 0, 12, 68
+"h:\vs_projects\aoc_2021\day4.cpp", "C++", 115, 0, 1, 18, 134
+"h:\vs_projects\aoc_2021\day5.cpp", "C++", 85, 0, 0, 8, 93
+"h:\vs_projects\aoc_2021\day6.cpp", "C++", 33, 0, 0, 6, 39
+"Total", "-", 457, 171, 1, 73, 702
