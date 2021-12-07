@@ -77,10 +77,10 @@ int64_t aoc::day4::part_2(const std::vector<std::string>& input)
 					break;
 				}
 			}
-			if (winner && boards.size() == 1)
-				return std::accumulate((*it).begin(), (*it).end(), 0ll) * i;
-			if (winner)
+			if (winner && boards.size() > 1)
 				it = boards.erase(it);
+			else if (winner)
+				return std::accumulate((*it).begin(), (*it).end(), 0ll) * i;
 			else
 				++it;
 		}
