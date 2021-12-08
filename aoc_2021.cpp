@@ -18,57 +18,77 @@ std::tuple<int64_t, double> Runner(F func, std::vector<I> input) {
 	return std::make_tuple(result, elapsed);
 }
 
-void Day1(std::vector<int> data) {
+double Day1(std::vector<int> data) {
 	auto [result1, elapsed1] = Runner(aoc::day1::part_1, data);
 	auto [result2, elapsed2] = Runner(aoc::day1::part_2, data);
 	print(__func__, result1, elapsed1, result2, elapsed2);
+	return elapsed1 + elapsed2;
 }
 
-void Day2(std::vector<std::string> data) {
+double Day2(std::vector<std::string> data) {
 	auto [result1, elapsed1] = Runner(aoc::day2::part_1, data);
 	auto [result2, elapsed2] = Runner(aoc::day2::part_2, data);
 	print(__func__, result1, elapsed1, result2, elapsed2);
+	return elapsed1 + elapsed2;
 }
 
-void Day3(std::vector<std::string> data) {
+double Day3(std::vector<std::string> data) {
 	auto [result1, elapsed1] = Runner(aoc::day3::part_1, data);
 	auto [result2, elapsed2] = Runner(aoc::day3::part_2, data);
 	print(__func__, result1, elapsed1, result2, elapsed2);
+	return elapsed1 + elapsed2;
 }
 
-void Day4(std::vector<std::string> data) {
+double Day4(std::vector<std::string> data) {
 	auto [result1, elapsed1] = Runner(aoc::day4::part_1, data);
 	auto [result2, elapsed2] = Runner(aoc::day4::part_2, data);
 	print(__func__, result1, elapsed1, result2, elapsed2);
+	return elapsed1 + elapsed2;
 }
 
-void Day5(std::vector<std::string> data) {
+double Day5(std::vector<std::string> data) {
 	auto [result1, elapsed1] = Runner(aoc::day5::part_1, data);
 	auto [result2, elapsed2] = Runner(aoc::day5::part_2, data);
 	print(__func__, result1, elapsed1, result2, elapsed2);
+	return elapsed1 + elapsed2;
 }
 
-void Day6(std::vector<std::string> data) {
+double Day6(std::vector<std::string> data) {
 	auto [result1, elapsed1] = Runner(aoc::day6::part_1, data);
 	auto [result2, elapsed2] = Runner(aoc::day6::part_2, data);
 	print(__func__, result1, elapsed1, result2, elapsed2);
+	return elapsed1 + elapsed2;
 }
 
-void Day7(std::vector<int> data) {
+double Day7(std::vector<int> data) {
 	auto [result1, elapsed1] = Runner(aoc::day7::part_1, data);
 	auto [result2, elapsed2] = Runner(aoc::day7::part_2, data);
 	print(__func__, result1, elapsed1, result2, elapsed2);
+	return elapsed1 + elapsed2;
+}
+
+double Day8(std::vector<std::string> data) {
+	auto [result1, elapsed1] = Runner(aoc::day8::part_1, data);
+	auto [result2, elapsed2] = Runner(aoc::day8::part_2, data);
+	print(__func__, result1, elapsed1, result2, elapsed2);
+	return elapsed1 + elapsed2;
 }
 
 int main()
 {
-	Day1(input::data_as_int("Input/day1.txt"));
-	Day2(input::data_as_string("Input/day2.txt"));
-	Day3(input::data_as_string("Input/day3.txt"));
-	Day4(input::data_as_string("Input/day4.txt"));
-	Day5(input::data_as_string("Input/day5.txt"));
-	Day6(input::data_as_string("Input/day6.txt"));
-	Day7(input::data_as_csv_int("Input/day7.txt"));
+	double total_time{ 0 };
+	/*
+	total_time+=Day1(input::data_as_int("Input/day1.txt"));
+	total_time += Day2(input::data_as_string("Input/day2.txt"));
+	total_time += Day3(input::data_as_string("Input/day3.txt"));
+	total_time += Day4(input::data_as_string("Input/day4.txt"));
+	total_time += Day5(input::data_as_string("Input/day5.txt"));
+	total_time += Day6(input::data_as_string("Input/day6.txt"));
+	total_time += Day7(input::data_as_csv_int("Input/day7.txt"));
+	*/
+	total_time += Day8(input::data_as_string("Input/day8.txt"));
+	std::cout << "\t~~~ total ~~~\n" << (total_time > 1000 ? total_time / 1000 : total_time) << (total_time > 1000 ? "ms" : "us") << "\n\n";
+
 	return 0;
 }
 
