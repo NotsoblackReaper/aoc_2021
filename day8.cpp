@@ -3,20 +3,18 @@
 
 #include "AOC_Solver.h"
 
-int64_t aoc::day8::part_1(std::vector<std::string>& input)
-{
+int64_t aoc::day8::part_1(const std::vector<std::string>& input){
 	int count = 0;
-	for (auto line : input)
-		for (int i = 0; i < 14; i++)
-		{
-			size_t space = line.find(' ');
-			std::string tmp = line.substr(0, space);
-			size_t ln = tmp.length();
-			line = line.substr(space + 1 + (i == 9 ? 2 : 0));
-			if (i > 9 && (ln == 2 || ln == 3 || ln == 4 || ln == 7))
+	for (auto line : input)	{
+		size_t end = line.length();
+		for (int i = 0; i < 4; i++)	{
+			size_t space = line.find_last_of(' ',end-2);
+			if (end - (space + 1) < 5 || end - (space + 1) == 7)
 				count++;
+			line[space]='-';
+			end = space;
 		}
-
+	}
 	return count;
 }
 
@@ -131,19 +129,19 @@ int64_t aoc::day8::part_2(std::vector<std::string>& input)
 		}
 		if (!parts[4].empty() && !parts[3].empty())
 		{
-			char c = difference(parts[4].front(), parts[3].front() + positions[3]).front();
+			char c = difference(parts[4][0], parts[3][0] + positions[3])[0];
 			positions[1] = c;
 		}
 		if (!parts[4].empty() && !parts[7].empty())
 		{
-			char c = difference(parts[4].front() + positions[0] + positions[6], parts[7].front()).front();
+			char c = difference(parts[4][0] + positions[0] + positions[6], parts[7][0])[0];
 			positions[4] = c;
 		}
 		for (auto& s : parts[6])
 		{
 			std::vector<char> diff = difference(s, "" + positions[0] + positions[1] + positions[3] + positions[4] + positions[6]);
 			if (diff.size() == 1)
-				positions[5] = diff.front();
+				positions[5] = diff[0];
 		}
 		for (auto& s : parts[5])
 		{
@@ -154,24 +152,22 @@ int64_t aoc::day8::part_2(std::vector<std::string>& input)
 			custom += positions[6];
 			std::vector<char> diff = difference(s, custom);
 			if (diff.size() == 1)
-				positions[2] = diff.front();
+				positions[2] = diff[0];
 		}
 		if (!parts[2].empty())
 		{
 			std::string custom{};
 			custom += positions[2];
-			std::vector<char> diff = difference(parts[2].front(), custom);
+			std::vector<char> diff = difference(parts[2][0], custom);
 			if (diff.size() == 1)
-				positions[5] = diff.front();
+				positions[5] = diff[0];
 		}
 
 		for (int i = 3; i > -1; --i)
 		{
 			int decoded = decode(positions, output[i]);
 			out_sum += decoded * std::pow(10, 3 - i);
-			//std::cout << decoded << " ";
 		}
-		//std::cout << "\n";
 	}
 
 

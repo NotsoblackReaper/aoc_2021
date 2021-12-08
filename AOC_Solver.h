@@ -56,7 +56,7 @@ namespace aoc
 
 	namespace day8
 	{
-		int64_t part_1(std::vector<std::string>&);
+		int64_t part_1(const std::vector<std::string>&);
 		int64_t part_2(std::vector<std::string>&);
 	}
 }
