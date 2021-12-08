@@ -28,6 +28,7 @@ int64_t aoc::day4::part_1(const std::vector<std::string>& input)
 				*it = 0;
 
 			for (int k = 0; k < 5; ++k){
+				if (j[k * 5 + k])continue;
 				int sum_hor{ 0 };
 				int sum_ver{ 0 };
 				for (int x = 0; x < 5; ++x){
@@ -66,6 +67,7 @@ int64_t aoc::day4::part_2(const std::vector<std::string>& input)
 			
 			bool winner = false;
 			for (int k = 0; k < 5; ++k){
+				if ((*it)[k * 5 + k])continue;
 				int sum_hor = 0;
 				int sum_ver = 0;
 				for (int x = 0; x < 5; ++x){
