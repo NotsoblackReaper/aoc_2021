@@ -77,7 +77,6 @@ double Day8(std::vector<std::string> data) {
 int main()
 {
 	double total_time{ 0 };
-	/*
 	total_time+=Day1(input::data_as_int("Input/day1.txt"));
 	total_time += Day2(input::data_as_string("Input/day2.txt"));
 	total_time += Day3(input::data_as_string("Input/day3.txt"));
@@ -85,7 +84,6 @@ int main()
 	total_time += Day5(input::data_as_string("Input/day5.txt"));
 	total_time += Day6(input::data_as_string("Input/day6.txt"));
 	total_time += Day7(input::data_as_csv_int("Input/day7.txt"));
-	*/
 	total_time += Day8(input::data_as_string("Input/day8.txt"));
 	std::cout << "\t~~~ total ~~~\n" << (total_time > 1000 ? total_time / 1000 : total_time) << (total_time > 1000 ? "ms" : "us") << "\n\n";
 
