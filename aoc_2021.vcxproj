@@ -148,6 +148,7 @@
     <ClCompile Include="aoc_2021.cpp" />
     <ClCompile Include="AOC_Solver.cpp" />
     <ClCompile Include="day1.cpp" />
+    <ClCompile Include="day10.cpp" />
     <ClCompile Include="day2.cpp" />
     <ClCompile Include="day3.cpp" />
     <ClCompile Include="day4.cpp" />
@@ -158,6 +159,7 @@
     <ClCompile Include="day9.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="Input\day10.txt" />
     <Text Include="Input\day9.txt" />
     <Text Include="Input\day8.txt" />
     <Text Include="Input\day1.txt" />
