@@ -1,32 +1,17 @@
-#include <array>
-
 #include "AOC_Solver.h"
 
 int64_t aoc::day9::part_1(std::vector<std::string>& input) {
-	std::vector<int>map{};
-	int width = input[0].length() + 2, height = input.size() + 2;
-	map.resize(width * height);
-	for (int i = 0; i < height * width; ++i)
+	int width = input[0].length(), height = input.size(),sum{};
+	for(int i=0;i<width*height;++i)
 	{
-		int y = i / width, x = i % width;
-		int val = y - 1 > -1 && y - 1 < input.size() &&
-			x - 1 > -1 && x - 1 < input[0].length() ?
-			input[y - 1][x - 1] - 48 : INT_MAX;
-		map[y * width + x] = val;
+		int x = i % width, y = i / width;
+		if(y>0&&input[y][x]>=input[y-1][x])continue;//UP
+		if (x > 0 && input[y][x] >= input[y][x-1])continue;//LEFT
+		if (y < height-1 && input[y][x] >= input[y + 1][x])continue;//DOWN
+		if (x < width - 1 && input[y][x] >= input[y][x+1])continue;//RIGHT
+		sum += input[y][x] - 47;
 	}
-
-	int risk_sum = 0;
-	for (int x = width + 2; x < width * (height - 1) + 1; ++x)
-	{
-		if (x % width == 0 || width % x + 1 == 0)continue;
-		if (map[x] < map[x - width] &&
-			map[x] < map[x + width] &&
-			map[x] < map[x - 1] &&
-			map[x] < map[x + 1])
-			risk_sum += 1 + map[x];
-	}
-
-	return risk_sum;
+	return sum;
 }
 
 int get_basin(std::vector<int>& map, int low, int width)
