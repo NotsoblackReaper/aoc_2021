@@ -6,24 +6,16 @@
 int64_t aoc::day10::part_1(std::vector<std::string>& input)
 {
 	int sum{};
-	for (auto& line : input)
-	{
+	for (auto& line : input){
 		std::stack<char>brackets{};
-		for (auto& c : line)
-		{
+		for (auto& c : line){
 			if (c == '(')
 				brackets.push(')');
-			else if (c == '{')
-				brackets.push('}');
-			else if (c == '[')
-				brackets.push(']');
-			else if (c == '<')
-				brackets.push('>');
+			else if (c == '{' || c == '[' || c == '<')
+				brackets.push(c + 2);
 			else
 			{
-				char x = brackets.top();
-				if(c!=x)
-				{
+				if(c!= brackets.top()){
 					sum += c == ')' ? 3 : c == ']' ? 57 : c == '}' ? 1197 : 25137;
 					break;
 				}
@@ -34,26 +26,17 @@ int64_t aoc::day10::part_1(std::vector<std::string>& input)
 	return sum;
 }
 int64_t aoc::day10::part_2(std::vector<std::string>& input) {
-	int sum{};
-	std::vector<uint64_t>scores{};
-	for (auto& line : input)
-	{
+	std::vector<int64_t>scores{};
+	for (auto& line : input){
 		std::stack<char>brackets{};
 		bool corrupt = false;
-		for (auto& c : line)
-		{
+		for (auto& c : line){
 			if (c == '(')
 				brackets.push(')');
-			else if (c == '{')
-				brackets.push('}');
-			else if (c == '[')
-				brackets.push(']');
-			else if (c == '<')
-				brackets.push('>');
-			else
-			{
-				char x = brackets.top();
-				if (c != x)
+			else if (c == '{'||c=='['||c=='<')
+				brackets.push(c+2);
+			else{
+				if (c != brackets.top())
 				{
 					corrupt = true;
 					break;
@@ -61,9 +44,8 @@ int64_t aoc::day10::part_2(std::vector<std::string>& input) {
 				brackets.pop();
 			}
 		}
-		if (!corrupt)
-		{
-			uint64_t score{};
+		if (!corrupt){
+			int64_t score{};
 			while (!brackets.empty())
 			{
 				score *= 5;
@@ -72,9 +54,8 @@ int64_t aoc::day10::part_2(std::vector<std::string>& input) {
 				brackets.pop();
 			}
 			scores.push_back(score);
-		//std::cout << "\nComplete for " << score << " points";
 		}
 	}
-	std::sort(scores.begin(), scores.end());
+	std::ranges::sort(scores);
 	return scores.at((scores.size() / 2));
 }

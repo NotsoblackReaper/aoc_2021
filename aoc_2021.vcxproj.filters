@@ -51,6 +51,9 @@
     <ClCompile Include="day10.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="day11.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="Input\day1.txt">
@@ -81,6 +84,9 @@
       <Filter>Resource Files</Filter>
     </Text>
     <Text Include="Input\day10.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="Input\day11.txt">
       <Filter>Resource Files</Filter>
     </Text>
   </ItemGroup>
