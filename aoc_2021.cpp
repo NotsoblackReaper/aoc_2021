@@ -1,7 +1,10 @@
 #include "AOC_Solver.h"
+#define SOLVE_ALL
+
 #include <iostream>
 #include <chrono>
 #include <tuple>
+
 
 auto print = [](const std::string& name, const uint64_t part1, double elapsed1, const uint64_t part2, double elapsed2, double scale_from = 1000) {
 	std::cout << "\t~~~ " << name << " ~~~"
@@ -98,8 +101,8 @@ double Day11(std::vector<std::string> data) {
 int main()
 {
 	double total_time{ 0 };
-	/*
-	total_time+=Day1(input::data_as_int("Input/day1.txt"));
+#ifdef SOLVE_ALL
+	total_time += Day1(input::data_as_int("Input/day1.txt"));
 	total_time += Day2(input::data_as_string("Input/day2.txt"));
 	total_time += Day3(input::data_as_string("Input/day3.txt"));
 	total_time += Day4(input::data_as_string("Input/day4.txt"));
@@ -109,8 +112,9 @@ int main()
 	total_time += Day8(input::data_as_string("Input/day8.txt"));
 	total_time += Day9(input::data_as_string("Input/day9.txt"));
 	total_time += Day10(input::data_as_string("Input/day10.txt"));
-	*/
 	total_time += Day11(input::data_as_string("Input/day11.txt"));
+#endif
+
 	std::cout << "\t~~~ total ~~~\n" << (total_time > 1000 ? total_time / 1000 : total_time) << (total_time > 1000 ? "ms" : "us") << "\n\n";
 
 	return 0;
