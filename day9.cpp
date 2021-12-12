@@ -1,6 +1,6 @@
 #include "AOC_Solver.h"
 
-int64_t aoc::day9::part_1(std::vector<std::string>& input) {
+uint64_t aoc::day9::part_1(std::vector<std::string>& input) {
 	int width = input[0].length(), height = input.size(),sum{};
 	for(int i=0;i<width*height;++i)
 	{
@@ -29,7 +29,7 @@ int get_basin(std::vector<char>& map, int low, int width)
 	return count;
 }
 
-int64_t aoc::day9::part_2(std::vector<std::string>& input) {
+uint64_t aoc::day9::part_2(std::vector<std::string>& input) {
 	std::vector<char>map{};
 	int width = input[0].length() + 2, height = input.size() + 2;
 	map.resize(width * height);

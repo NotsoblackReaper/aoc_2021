@@ -3,7 +3,7 @@
 #include "AOC_Solver.h"
 #include <stack>
 #include <algorithm>
-int64_t aoc::day10::part_1(std::vector<std::string>& input)
+uint64_t aoc::day10::part_1(std::vector<std::string>& input)
 {
 	int sum{};
 	for (auto& line : input){
@@ -25,8 +25,8 @@ int64_t aoc::day10::part_1(std::vector<std::string>& input)
 	}
 	return sum;
 }
-int64_t aoc::day10::part_2(std::vector<std::string>& input) {
-	std::vector<int64_t>scores{};
+uint64_t aoc::day10::part_2(std::vector<std::string>& input) {
+	std::vector<uint64_t>scores{};
 	for (auto& line : input){
 		std::stack<char>brackets{};
 		bool corrupt = false;
@@ -45,7 +45,7 @@ int64_t aoc::day10::part_2(std::vector<std::string>& input) {
 			}
 		}
 		if (!corrupt){
-			int64_t score{};
+			uint64_t score{};
 			while (!brackets.empty())
 			{
 				score *= 5;

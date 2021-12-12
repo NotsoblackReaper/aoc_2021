@@ -3,7 +3,7 @@
 
 #include "AOC_Solver.h"
 
-int64_t aoc::day3::part_1(std::vector<std::string>& input) {
+uint64_t aoc::day3::part_1(std::vector<std::string>& input) {
 	const size_t digits = input[0].length();
 	std::string  gamma_rate{}, epsilon_rate{};
 	for (unsigned int i = 0; i < digits; ++i) {
@@ -23,7 +23,7 @@ int64_t aoc::day3::part_1(std::vector<std::string>& input) {
 	return std::stoll(gamma_rate, nullptr, 2) * std::stoll(epsilon_rate, nullptr, 2);
 }
 
-int64_t aoc::day3::part_2(std::vector<std::string>& input)
+uint64_t aoc::day3::part_2(std::vector<std::string>& input)
 {
 	const size_t digits = input[0].length();
 

@@ -1,5 +1,5 @@
 #include "AOC_Solver.h"
-#define SOLVE_ALL
+//#define SOLVE_ALL
 
 #include <iostream>
 #include <chrono>
@@ -13,9 +13,9 @@ auto print = [](const std::string& name, const uint64_t part1, double elapsed1, 
 };
 
 template<typename F, typename I>
-std::tuple<int64_t, double> Runner(F func, std::vector<I> input) {
+std::tuple<uint64_t, double> Runner(F func, std::vector<I> input) {
 	auto start = std::chrono::high_resolution_clock::now();
-	int64_t result = func(input);
+	uint64_t result = func(input);
 	auto end = std::chrono::high_resolution_clock::now();
 	auto elapsed = std::chrono::duration_cast<std::chrono::microseconds>(end - start).count();
 	return std::make_tuple(result, elapsed);
@@ -98,6 +98,13 @@ double Day11(std::vector<std::string> data) {
 	return elapsed1 + elapsed2;
 }
 
+double Day12(std::vector<std::string> data) {
+	auto [result1, elapsed1] = Runner(aoc::day12::part_1, data);
+	auto [result2, elapsed2] = Runner(aoc::day12::part_2, data);
+	print(__func__, result1, elapsed1, result2, elapsed2);
+	return elapsed1 + elapsed2;
+}
+
 int main()
 {
 	double total_time{ 0 };
@@ -114,6 +121,7 @@ int main()
 	total_time += Day10(input::data_as_string("Input/day10.txt"));
 	total_time += Day11(input::data_as_string("Input/day11.txt"));
 #endif
+	total_time += Day12(input::data_as_string("Input/day12.txt"));
 
 	std::cout << "\t~~~ total ~~~\n" << (total_time > 1000 ? total_time / 1000 : total_time) << (total_time > 1000 ? "ms" : "us") << "\n\n";
 

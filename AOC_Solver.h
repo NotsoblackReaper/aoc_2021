@@ -14,66 +14,71 @@ namespace aoc
 {
 	namespace day1
 	{
-		int64_t part_1(std::vector<int>&);
-		int64_t part_2(std::vector<int>&);
+		uint64_t part_1(std::vector<int>&);
+		uint64_t part_2(std::vector<int>&);
 	}
 
 	namespace day2
 	{
-		int64_t part_1(const std::vector<std::string>&);
-		int64_t part_2(const std::vector<std::string>&);
+		uint64_t part_1(const std::vector<std::string>&);
+		uint64_t part_2(const std::vector<std::string>&);
 	}
 
 	namespace day3
 	{
-		int64_t part_1(std::vector<std::string>&);
-		int64_t part_2(std::vector<std::string>&);
+		uint64_t part_1(std::vector<std::string>&);
+		uint64_t part_2(std::vector<std::string>&);
 	}
 
 	namespace day4
 	{
-		int64_t part_1(const std::vector<std::string>&);
-		int64_t part_2(const std::vector<std::string>&);
+		uint64_t part_1(const std::vector<std::string>&);
+		uint64_t part_2(const std::vector<std::string>&);
 	}
 
 	namespace day5
 	{
-		int64_t part_1(std::vector<std::string>&);
-		int64_t part_2(std::vector<std::string>&);
+		uint64_t part_1(std::vector<std::string>&);
+		uint64_t part_2(std::vector<std::string>&);
 	}
 
 	namespace day6
 	{
-		int64_t part_1(std::vector<std::string>&);
-		int64_t part_2(std::vector<std::string>&);
+		uint64_t part_1(std::vector<std::string>&);
+		uint64_t part_2(std::vector<std::string>&);
 	}
 
 	namespace day7
 	{
-		int64_t part_1(std::vector<int>&);
-		int64_t part_2(std::vector<int>&);
+		uint64_t part_1(std::vector<int>&);
+		uint64_t part_2(std::vector<int>&);
 	}
 
 	namespace day8
 	{
-		int64_t part_1(const std::vector<std::string>&);
-		int64_t part_2(std::vector<std::string>&);
+		uint64_t part_1(const std::vector<std::string>&);
+		uint64_t part_2(std::vector<std::string>&);
 	}
 
 	namespace day9
 	{
-		int64_t part_1(std::vector<std::string>&);
-		int64_t part_2(std::vector<std::string>&);
+		uint64_t part_1(std::vector<std::string>&);
+		uint64_t part_2(std::vector<std::string>&);
 	}
 	namespace day10
 	{
-		int64_t part_1(std::vector<std::string>&);
-		int64_t part_2(std::vector<std::string>&);
+		uint64_t part_1(std::vector<std::string>&);
+		uint64_t part_2(std::vector<std::string>&);
 	}
 	namespace day11
 	{
-		int64_t part_1(std::vector<std::string>&);
-		int64_t part_2(std::vector<std::string>&);
+		uint64_t part_1(std::vector<std::string>&);
+		uint64_t part_2(std::vector<std::string>&);
+	}
+	namespace day12
+	{
+		uint64_t part_1(std::vector<std::string>&);
+		uint64_t part_2(std::vector<std::string>&);
 	}
 }
 #endif

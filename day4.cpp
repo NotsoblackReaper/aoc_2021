@@ -4,7 +4,7 @@
 
 #include "AOC_Solver.h"
 
-int64_t aoc::day4::part_1(const std::vector<std::string>& input)
+uint64_t aoc::day4::part_1(const std::vector<std::string>& input)
 {
 	std::vector<std::array<int,25>>boards{};
 	for (size_t i = 2; i < input.size(); i += 6){
@@ -43,7 +43,7 @@ int64_t aoc::day4::part_1(const std::vector<std::string>& input)
 	return 0;
 }
 
-int64_t aoc::day4::part_2(const std::vector<std::string>& input)
+uint64_t aoc::day4::part_2(const std::vector<std::string>& input)
 {
 	std::vector<std::array<int, 25>>boards{};
 	for (size_t i = 2; i < input.size(); i += 6){

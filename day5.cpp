@@ -5,7 +5,7 @@
 #include <numeric>
 #include "AOC_Solver.h"
 
-int64_t aoc::day5::part_1(std::vector<std::string>& input)
+uint64_t aoc::day5::part_1(std::vector<std::string>& input)
 {
 	int max = 0,lnr=0;
 	std::vector<std::array<int,4>>lines{};
@@ -44,7 +44,7 @@ int64_t aoc::day5::part_1(std::vector<std::string>& input)
 	return std::accumulate(board.begin(), board.end(), 0, [](int a, int b) {return a + (b > 1); });
 }
 
-int64_t aoc::day5::part_2(std::vector<std::string>& input)
+uint64_t aoc::day5::part_2(std::vector<std::string>& input)
 {
 	int max = 0, lnr = 0;
 	std::vector<std::array<int, 4>>lines{};

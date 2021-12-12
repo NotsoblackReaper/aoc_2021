@@ -3,7 +3,7 @@
 
 #include "AOC_Solver.h"
 
-int64_t aoc::day8::part_1(const std::vector<std::string>& input) {
+uint64_t aoc::day8::part_1(const std::vector<std::string>& input) {
 	int count = 0;
 	for (auto line : input) {
 		size_t end = line.length();
@@ -51,7 +51,7 @@ int decode(std::array<char, 7>positions, std::string& s)
 	return 9;
 }
 
-int64_t aoc::day8::part_2(std::vector<std::string>& input)
+uint64_t aoc::day8::part_2(std::vector<std::string>& input)
 {
 	int out_sum{ 0 };
 	for (auto& line : input)
