@@ -5,6 +5,9 @@
 struct Point
 {
 	int x, y;
+	bool operator==(const Point& rhs) const	{
+		return rhs.x == x && rhs.y == y;
+	}
 };
 
 uint64_t aoc::day13::part_1(std::vector<std::string>& input) {

@@ -112,6 +112,13 @@ double Day13(std::vector<std::string> data) {
 	return elapsed1 + elapsed2;
 }
 
+double Day14(std::vector<std::string> data) {
+	auto [result1, elapsed1] = Runner(aoc::day14::part_1, data);
+	auto [result2, elapsed2] = Runner(aoc::day14::part_2, data);
+	print(__func__, result1, elapsed1, result2, elapsed2);
+	return elapsed1 + elapsed2;
+}
+
 int main()
 {
 	double total_time{ 0 };
@@ -128,8 +135,9 @@ int main()
 	total_time += Day10(input::data_as_string("Input/day10.txt"));
 	total_time += Day11(input::data_as_string("Input/day11.txt"));
 	total_time += Day12(input::data_as_string("Input/day12.txt"));
-#endif
 	total_time += Day13(input::data_as_string("Input/day13.txt"));
+#endif
+	total_time += Day14(input::data_as_string("Input/day14.txt"));
 
 	std::cout << "\t~~~ total ~~~\n" << (total_time > 1000 ? total_time / 1000 : total_time) << (total_time > 1000 ? "ms" : "us") << "\n\n";
 
