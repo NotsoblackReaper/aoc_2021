@@ -99,19 +99,19 @@ uint64_t aoc::day13::part_2(std::vector<std::string>& input) {
 				++it;
 		}
 	}
-
+	std::string result{};
 	for(int y=0;y<fold_y;++y)
 	{
 		for(int x=0;x<fold_x;++x)
 		{
 			Point new_point = { x,y };
 			if (std::any_of(points.begin(), points.end(), [&](Point& p) {return new_point.x == p.x && new_point.y == p.y; }))
-				std::cout << '#';
+				result+='#';
 			else
-				std::cout << ' ';
+				result += ' ';
 		}
-		std::cout << "\n";
+		result += "\n";
 	}
-
-	return points.size();
+	std::cout << result;
+	return 0;
 }

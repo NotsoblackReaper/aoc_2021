@@ -1,6 +1,6 @@
-#include <map>
 #include <algorithm>
 #include <iostream>
+#include <unordered_map>
 
 #include "AOC_Solver.h"
 //#define DEBUG
@@ -8,7 +8,7 @@ struct cave
 {
 	bool big;
 	std::string name;
-	std::map<std::string, cave>connections{};
+	std::unordered_map<std::string, cave>connections{};
 	void add_connection(std::string& cave_name, cave c)
 	{
 		connections.insert_or_assign(cave_name, c);
@@ -27,7 +27,7 @@ struct cave
 		big = false;
 	}
 };
-std::vector<std::vector<std::string>> getPaths(std::map<std::string, cave>& caves, std::vector<std::string>& path)
+std::vector<std::vector<std::string>> getPaths(std::unordered_map<std::string, cave>& caves, std::vector<std::string>& path)
 {
 
 	std::vector<std::vector<std::string>>allPaths{};
@@ -51,7 +51,7 @@ std::vector<std::vector<std::string>> getPaths(std::map<std::string, cave>& cave
 }
 
 uint64_t aoc::day12::part_1(std::vector<std::string>& input) {
-	std::map<std::string, cave>caves{};
+	std::unordered_map<std::string, cave>caves{};
 	for (auto& line : input)
 	{
 		int dash = line.find_last_of('-');
@@ -76,7 +76,7 @@ uint64_t aoc::day12::part_1(std::vector<std::string>& input) {
 	return  getPaths(caves, path).size();
 }
 
-std::vector<std::vector<std::string>> getPaths_part2(std::map<std::string, cave>& caves, std::vector<std::string>& path, bool visited_twice = false)
+std::vector<std::vector<std::string>> getPaths_part2(std::unordered_map<std::string, cave>& caves, std::vector<std::string>& path, bool visited_twice = false)
 {
 	std::vector<std::vector<std::string>>allPaths{};
 	if (path.back() == "end")
@@ -108,7 +108,7 @@ std::vector<std::vector<std::string>> getPaths_part2(std::map<std::string, cave>
 	return allPaths;
 }
 uint64_t aoc::day12::part_2(std::vector<std::string>& input) {
-	std::map<std::string, cave>caves{};
+	std::unordered_map<std::string, cave>caves{};
 	for (auto& line : input)
 	{
 		int dash = line.find_last_of('-');

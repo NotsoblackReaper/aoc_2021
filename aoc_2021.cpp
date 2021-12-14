@@ -1,5 +1,5 @@
 #include "AOC_Solver.h"
-//#define SOLVE_ALL
+#define SOLVE_ALL
 
 #include <iostream>
 #include <chrono>
@@ -119,6 +119,13 @@ double Day14(std::vector<std::string> data) {
 	return elapsed1 + elapsed2;
 }
 
+double Day15(std::vector<std::string> data) {
+	auto [result1, elapsed1] = Runner(aoc::day15::part_1, data);
+	auto [result2, elapsed2] = Runner(aoc::day15::part_2, data);
+	print(__func__, result1, elapsed1, result2, elapsed2);
+	return elapsed1 + elapsed2;
+}
+
 int main()
 {
 	double total_time{ 0 };
@@ -134,10 +141,11 @@ int main()
 	total_time += Day9(input::data_as_string("Input/day9.txt"));
 	total_time += Day10(input::data_as_string("Input/day10.txt"));
 	total_time += Day11(input::data_as_string("Input/day11.txt"));
-	total_time += Day12(input::data_as_string("Input/day12.txt"));
+	//total_time += Day12(input::data_as_string("Input/day12.txt"));
 	total_time += Day13(input::data_as_string("Input/day13.txt"));
-#endif
 	total_time += Day14(input::data_as_string("Input/day14.txt"));
+#endif
+	total_time += Day15(input::data_as_string("Input/day15.txt"));
 
 	std::cout << "\t~~~ total ~~~\n" << (total_time > 1000 ? total_time / 1000 : total_time) << (total_time > 1000 ? "ms" : "us") << "\n\n";
 
