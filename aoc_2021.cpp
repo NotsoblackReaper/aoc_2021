@@ -141,7 +141,7 @@ int main()
 	total_time += Day9(input::data_as_string("Input/day9.txt"));
 	total_time += Day10(input::data_as_string("Input/day10.txt"));
 	total_time += Day11(input::data_as_string("Input/day11.txt"));
-	//total_time += Day12(input::data_as_string("Input/day12.txt"));
+	total_time += Day12(input::data_as_string("Input/day12.txt"));
 	total_time += Day13(input::data_as_string("Input/day13.txt"));
 	total_time += Day14(input::data_as_string("Input/day14.txt"));
 #endif
