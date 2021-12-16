@@ -30,9 +30,9 @@ const char* unitFromNano(double time)
 }
 
 HANDLE hConsole;
-auto print = [](int day, const uint64_t part1, double elapsed1_median, double elapsed1_mean, double elapsed1_max, const uint64_t part2, double elapsed2_median, double elapsed2_mean, double elapsed2_max) {
+auto print = [](int day,int iterations, const uint64_t part1, double elapsed1_median, double elapsed1_mean, double elapsed1_max, const uint64_t part2, double elapsed2_median, double elapsed2_mean, double elapsed2_max) {
 		SetConsoleTextAttribute(hConsole, day % 14 + 1);
-	std::cout << "\t\t~~~~~~~~~ Day" << day << " ~~~~~~~~~";
+	std::cout << "\t~~~~~~~~~~~~~~~ Day: " << day <<" Iterations: "<<iterations<< " ~~~~~~~~~~~~~~~";
 	SetConsoleTextAttribute(hConsole, 15);
 	std::cout
 		<< "\nPart 1: " << part1 << "\nElapsed Time:"
@@ -79,7 +79,7 @@ double benchmark_day(std::vector<INPUT> data, F1 part1, F2 part2, int day) {
 	double max1 = *std::ranges::max_element(part1_times);
 	double max2 = *std::ranges::max_element(part2_times);
 
-	print(day,
+	print(day,N,
 		r1, median1, avg1, max1,
 		r2, median2, avg2, max2);
 	return median1 + median2;
@@ -87,7 +87,7 @@ double benchmark_day(std::vector<INPUT> data, F1 part1, F2 part2, int day) {
 int main()
 {
 	hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-	constexpr int N = 11;
+	constexpr int N = 50;
 	double total_time{};
 	double day12{};
 #if NDEBUG
@@ -102,12 +102,13 @@ int main()
 	total_time += benchmark_day<std::string, N>(input::data_as_string("Input/day9.txt"), aoc::day9::part_1, aoc::day9::part_2, 9);
 	total_time += benchmark_day<std::string, N>(input::data_as_string("Input/day10.txt"), aoc::day10::part_1, aoc::day10::part_2, 10);
 	total_time += benchmark_day<std::string, N>(input::data_as_string("Input/day11.txt"), aoc::day11::part_1, aoc::day11::part_2, 11);
-	day12 += benchmark_day<std::string, N>(input::data_as_string("Input/day12.txt"), aoc::day12::part_1, aoc::day12::part_2, 12);
+	day12 += benchmark_day<std::string, N/4>(input::data_as_string("Input/day12.txt"), aoc::day12::part_1, aoc::day12::part_2, 12);
 	total_time += benchmark_day<std::string, N>(input::data_as_string("Input/day13.txt"), aoc::day13::part_1, aoc::day13::part_2, 13);
 	total_time += benchmark_day<std::string, N>(input::data_as_string("Input/day14.txt"), aoc::day14::part_1, aoc::day14::part_2, 14);
 	total_time += benchmark_day<std::string, N>(input::data_as_string("Input/day15.txt"), aoc::day15::part_1, aoc::day15::part_2, 15);
 	total_time += benchmark_day<std::string, N>(input::data_as_string("Input/day16.txt"), aoc::day16::part_1, aoc::day16::part_2, 16);
 #endif
+	total_time += benchmark_day<std::string, N>(input::data_as_string("Input/day17.txt"), aoc::day17::part_1, aoc::day17::part_2, 17);
 
 	std::cout << "\t~~~ Total (No Day 12) ~~~\n" << scaledTime(total_time) << unitFromNano(total_time) << "\n\n";
 #if NDEBUG

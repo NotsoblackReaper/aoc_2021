@@ -100,5 +100,10 @@ namespace aoc
 		uint64_t part_1(const std::vector<std::string>&);
 		uint64_t part_2(const std::vector<std::string>&);
 	}
+	namespace day17
+	{
+		uint64_t part_1(std::vector<std::string>&);
+		uint64_t part_2(std::vector<std::string>&);
+	}
 }
 #endif

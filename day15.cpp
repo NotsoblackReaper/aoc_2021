@@ -1,9 +1,5 @@
 #include <iostream>
-#include <algorithm>
-#include <array>
 #include <list>
-#include <map>
-#include <numeric>
 #include <queue>
 
 #include "AOC_Solver.h"
@@ -83,13 +79,13 @@ uint64_t aoc::day15::part_1(std::vector<std::string>& input)
 uint64_t aoc::day15::part_2(std::vector<std::string>& input)
 {
 	std::vector<int>map{};
-	int input_widht = input[0].length(), input_height = input.size();
-	int width = input_widht*5, height = input_height*5;
+	const size_t input_width = input[0].length(), input_height = input.size();
+	const size_t width = input_width*5, height = input_height*5;
 	map.resize(width * height);
 	for (int i = 0; i < height * width; ++i) {
 		int y = i / width, x = i % width;
-		int val = input[y % input_height][x%input_widht] - '0';
-		int offset = y / input_height + x / input_widht;
+		int val = input[y % input_height][x%input_width] - '0';
+		int offset = y / input_height + x / input_width;
 		map[y * width + x] = (val+offset-1)%9+1;
 	}
 
@@ -98,7 +94,6 @@ uint64_t aoc::day15::part_2(std::vector<std::string>& input)
 	std::priority_queue < std::pair<int, int>> pq;
 	pq.push(std::make_pair(0, 0));
 	while (costs[width * height - 1] == INT_MAX) {
-		int c = pq.top().first;
 		int u = pq.top().second;
 		pq.pop();
 
@@ -106,7 +101,7 @@ uint64_t aoc::day15::part_2(std::vector<std::string>& input)
 
 		int i;
 		//South
-		if (y < height - 1)
+		if (y+1 < height)
 		{
 			i = (y + 1) * width + x;
 			int cost = costs[u] + map[i];
@@ -128,7 +123,7 @@ uint64_t aoc::day15::part_2(std::vector<std::string>& input)
 			}
 		}
 		//east
-		if (x < width - 1)
+		if (x+1 < width)
 		{
 			i = y * width + (x + 1);
 			int cost = costs[u] + map[i];

@@ -51,7 +51,7 @@ std::pair<std::pair<int, uint64_t>, unsigned int> handle_packet(std::string bina
 		return std::make_pair(std::make_pair(version, data_as_ull), offset);
 	}
 	int version_sum = version;
-	char length_type_id = binary_data[6];
+	const char length_type_id = binary_data[6];
 	int packet_length=INT_MAX, packet_number = INT_MAX;
 	
 	int offset;
