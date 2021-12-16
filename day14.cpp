@@ -1,12 +1,11 @@
 #include <algorithm>
 #include <array>
-#include <iostream>
 
 #include "AOC_Solver.h"
 #include <map>
 #include <unordered_map>
 uint64_t aoc::day14::part_1(std::vector<std::string>& input) {
-	std::string polymer = input[0];
+	std::string& polymer = input[0];
 	std::unordered_map<std::string, uint64_t>parts{};
 	std::map<std::string, char>rules{};
 
@@ -54,7 +53,7 @@ uint64_t aoc::day14::part_1(std::vector<std::string>& input) {
 }
 
 uint64_t aoc::day14::part_2(std::vector<std::string>& input) {
-	std::string polymer = input[0];
+	std::string& polymer = input[0];
 	std::unordered_map<std::string, uint64_t>parts{};
 	std::map<std::string, char>rules{};
 

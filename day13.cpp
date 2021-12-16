@@ -112,6 +112,9 @@ uint64_t aoc::day13::part_2(std::vector<std::string>& input) {
 		}
 		result += "\n";
 	}
+#if !NDEBUG
 	std::cout << result;
+#endif
+
 	return 0;
 }
