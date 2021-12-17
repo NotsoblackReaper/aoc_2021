@@ -85,7 +85,12 @@ double benchmark_day(std::vector<INPUT> data, F1 part1, F2 part2, int day) {
 		r2, median2, avg2, max2);
 	return median1 + median2;
 }
+#if NDEBUG
 constexpr int N = 25;
+#endif
+#if !NDEBUG
+constexpr int N = 1;
+#endif
 int main()
 {
 	hConsole = GetStdHandle(STD_OUTPUT_HANDLE);

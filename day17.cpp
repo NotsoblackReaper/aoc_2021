@@ -116,35 +116,9 @@ bool print(int velX,int velY,int minX,int minY,int maxX,int maxY,int maxSteps)
 
 uint64_t aoc::day17::part_1(std::vector<std::string>& input)
 {
-	int x_char = input[0].find('x');
-	int y_char = input[0].find('y');
-	int x_dot= input[0].find_first_of('.');
-	int y_dot = input[0].find_last_of('.')-1;
-	int x_min = std::stoi(input[0].substr(x_char + 2, x_dot - x_char - 2));
-	int x_max = std::stoi(input[0].substr(x_dot + 2, y_char - x_dot- 2));
-	int y_min = std::stoi(input[0].substr(y_char + 2, y_dot - y_char - 2));
-	int y_max = std::stoi(input[0].substr(y_dot + 2));
-
-
-	int max_y = 0;
-	int x_vel = 0;
-	int y_vel = 0;
-	for(int i=0;i<500;++i)
-	{
-		int y = willHitY(i, y_min, y_max);
-		if (y > max_y) {
-			max_y = y;
-			y_vel = i;
-		}
-	}
-	for (int i = 0; i < 1000; ++i) {
-		bool x = willHitX(i, x_min, x_max);
-		if (x) {
-			x_vel = i;
-			break;
-		}
-	}
-	return max_y;
+	int equals = input[0].find_last_of('=');
+	int y_min = std::stoi(input[0].substr(equals + 1, input[0].find_last_of('.') - 1 - equals - 2));
+	return (-y_min * (-y_min - 1)) / 2;
 }
 
 uint64_t aoc::day17::part_2(std::vector<std::string>& input)

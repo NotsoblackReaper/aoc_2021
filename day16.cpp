@@ -1,6 +1,7 @@
 #include <iostream>
 #include <numeric>
 #include <algorithm>
+#include <map>
 
 #include "AOC_Solver.h"
 
@@ -55,13 +56,10 @@ std::pair<std::pair<int, uint64_t>, unsigned int> handle_packet(std::string bina
 	int packet_length=INT_MAX, packet_number = INT_MAX;
 	
 	int offset;
-	if (length_type_id == '0')
-	{
+	if (length_type_id == '0'){
 		packet_length = std::stoi(binary_data.substr(7, 15), nullptr, 2);
 		offset = 22;
-	}
-	else
-	{
+	}else{
 		packet_number = std::stoi(binary_data.substr(7, 11), nullptr, 2);
 		offset = 18;
 	}

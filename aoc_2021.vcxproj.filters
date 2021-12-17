@@ -125,10 +125,10 @@
     <Text Include="Input\day16.txt">
       <Filter>Resource Files</Filter>
     </Text>
-    <Text Include="Input\day17.txt">
-      <Filter>Source Files</Filter>
-    </Text>
     <Text Include="Input\day18.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="Input\day17.txt">
       <Filter>Resource Files</Filter>
     </Text>
   </ItemGroup>
