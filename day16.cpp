@@ -5,29 +5,23 @@
 
 #include "AOC_Solver.h"
 
-const char* hex_char_to_bin(char c)
-{
-	switch (toupper(c))
-	{
-	case '0': return "0000";
-	case '1': return "0001";
-	case '2': return "0010";
-	case '3': return "0011";
-	case '4': return "0100";
-	case '5': return "0101";
-	case '6': return "0110";
-	case '7': return "0111";
-	case '8': return "1000";
-	case '9': return "1001";
-	case 'A': return "1010";
-	case 'B': return "1011";
-	case 'C': return "1100";
-	case 'D': return "1101";
-	case 'E': return "1110";
-	case 'F': return "1111";
-	default: return "ERROR";
-	}
-}
+std::map<char, std::string>hex_bin_map = {
+	{'0',std::string{"0000"}},
+	{'1',std::string{"0001"}},
+	{'2',std::string{"0010"}},
+	{'3',std::string{"0011"}},
+	{'4',std::string{"0100"}},
+	{'5',std::string{"0101"}},
+	{'6',std::string{"0110"}},
+	{'7',std::string{"0111"}},
+	{'8',std::string{"1000"}},
+	{'9',std::string{"1001"}},
+	{'A',std::string{"1010"}},
+	{'B',std::string{"1011"}},
+	{'C',std::string{"1100"}},
+	{'D',std::string{"1101"}},
+	{'E',std::string{"1110"}},
+	{'F',std::string{"1111"}}};
 
 std::pair<std::pair<int, uint64_t>, unsigned int> handle_packet(std::string binary_data)
 {
@@ -98,7 +92,7 @@ std::pair<std::pair<int, uint64_t>, unsigned int> handle_packet(std::string bina
 uint64_t aoc::day16::part_1(const std::vector<std::string>& input){
 	std::string binary{};
 	for (const char& i : input[0])
-		binary += hex_char_to_bin(i);
+		binary += hex_bin_map[i];
 
 	auto [result, packet_end] = handle_packet(binary);
 	return result.first;
@@ -107,7 +101,7 @@ uint64_t aoc::day16::part_1(const std::vector<std::string>& input){
 uint64_t aoc::day16::part_2(const std::vector<std::string>& input){
 	std::string binary{};
 	for (const char& i : input[0])
-		binary += hex_char_to_bin(i);
+		binary += hex_bin_map[i];
 
 	auto [result, packet_end] = handle_packet(binary);
 	return result.second;
