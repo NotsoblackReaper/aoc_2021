@@ -30,8 +30,7 @@ uint64_t aoc::day3::part_2(std::vector<std::string>& input)
 	char common_bit;
 	std::vector oxygen{ input };
 	auto end_it = oxygen.end();
-	for (unsigned int i = 0; i < digits && oxygen.size()>1; ++i)
-	{
+	for (unsigned int i = 0; i < digits && oxygen.size()>1; ++i){
 		size_t oxygen_size = end_it - oxygen.begin();
 		if (oxygen_size == 1)continue;
 
@@ -46,8 +45,7 @@ uint64_t aoc::day3::part_2(std::vector<std::string>& input)
 	}
 
 	end_it = input.end();
-	for (unsigned int i = 0; i < digits && input.size()>1; ++i)
-	{
+	for (unsigned int i = 0; i < digits && input.size()>1; ++i)	{
 		size_t co2_size = end_it - input.begin();
 		if (co2_size == 1)continue;
 

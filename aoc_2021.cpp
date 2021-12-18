@@ -31,7 +31,9 @@ const char* unitFromNano(double time)
 }
 
 HANDLE hConsole;
-auto print = [](int day,int iterations, const uint64_t part1, double elapsed1_median, double elapsed1_mean, double elapsed1_max, const uint64_t part2, double elapsed2_median, double elapsed2_mean, double elapsed2_max) {
+auto print = [](int day, int iterations, const uint64_t part1, double elapsed1_median, double elapsed1_mean,
+                double elapsed1_max, const uint64_t part2, double elapsed2_median, double elapsed2_mean,
+                double elapsed2_max){
 		SetConsoleTextAttribute(hConsole, day % 14 + 1);
 	std::cout << "\t~~~~~~~~~~~~~~~ Day: " << day <<"\tIterations: "<<iterations<< " ~~~~~~~~~~~~~~~";
 	SetConsoleTextAttribute(hConsole, 15);
@@ -54,6 +56,7 @@ std::tuple<uint64_t, double> Runner(F func, std::vector<I> input) {
 	auto elapsed = std::chrono::duration_cast<std::chrono::nanoseconds>(end - start).count();
 	return std::make_tuple(result, elapsed);
 }
+
 template<typename INPUT, int N, typename F1, typename F2>
 double benchmark_day(std::vector<INPUT> data, F1 part1, F2 part2, int day) {
 	std::vector<double>part1_times(N);
@@ -85,6 +88,7 @@ double benchmark_day(std::vector<INPUT> data, F1 part1, F2 part2, int day) {
 		r2, median2, avg2, max2);
 	return median1 + median2;
 }
+
 #if NDEBUG
 constexpr int N = 25;
 #endif
