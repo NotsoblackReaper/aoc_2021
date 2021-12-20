@@ -117,5 +117,25 @@ namespace aoc
 		uint64_t part_1(std::vector<std::string>&);
 		uint64_t part_2(std::vector<std::string>&);
 	}
+	namespace day21 {
+		uint64_t part_1(std::vector<std::string>&);
+		uint64_t part_2(std::vector<std::string>&);
+	}
+	namespace day22 {
+		uint64_t part_1(std::vector<std::string>&);
+		uint64_t part_2(std::vector<std::string>&);
+	}
+	namespace day23 {
+		uint64_t part_1(std::vector<std::string>&);
+		uint64_t part_2(std::vector<std::string>&);
+	}
+	namespace day24 {
+		uint64_t part_1(std::vector<std::string>&);
+		uint64_t part_2(std::vector<std::string>&);
+	}
+	namespace day25 {
+		uint64_t part_1(std::vector<std::string>&);
+		uint64_t part_2(std::vector<std::string>&);
+	}
 }
 #endif

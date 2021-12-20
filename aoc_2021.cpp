@@ -122,9 +122,10 @@ int main()
 	total_time += benchmark_day<std::string, N>(input::data_as_string("Input/day17.txt"), aoc::day17::part_1, aoc::day17::part_2, 17);
 	total_time += benchmark_day<std::string, N>(input::data_as_string("Input/day18.txt"), aoc::day18::part_1, aoc::day18::part_2, 18);
 	total_time += benchmark_day<std::string, 1>(input::data_as_string("Input/day19.txt"), aoc::day19::part_1, aoc::day19::part_2, 19);
+	total_time += benchmark_day<std::string, N>(input::data_as_string("Input/day20.txt"), aoc::day20::part_1, aoc::day20::part_2, 20);
 
 #endif
-	total_time += benchmark_day<std::string, N>(input::data_as_string("Input/day20.txt"), aoc::day20::part_1, aoc::day20::part_2, 20);
+	total_time += benchmark_day<std::string, N>(input::data_as_string("Input/day20.txt"), aoc::day21::part_1, aoc::day21::part_2, 21);
 
 	SetConsoleTextAttribute(hConsole, 2);
 	std::cout << "\t~~~~~~~~~~~~~~~~~~~~~~~~ Total ~~~~~~~~~~~~~~~~~~~~~~~\n";
