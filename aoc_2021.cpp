@@ -5,6 +5,7 @@
 #include <tuple>
 #include <numeric>
 #include <algorithm>
+#include <functional>
 #include <iomanip>
 #include <Windows.h>   // WinApi header
 
@@ -90,7 +91,7 @@ double benchmark_day(std::vector<INPUT> data, F1 part1, F2 part2, int day) {
 }
 
 #if NDEBUG
-constexpr int N = 1;//25;
+constexpr int N = 25;
 #endif
 #if !NDEBUG
 constexpr int N = 1;
@@ -103,7 +104,7 @@ int main()
 	double total_time{};
 #if NDEBUG
 	double day12{};
-	/*
+	
 	total_time += benchmark_day<int, N>(input::data_as_int("Input/day1.txt"), aoc::day1::part_1, aoc::day1::part_2, 1);
 	total_time += benchmark_day<std::string, N>(input::data_as_string("Input/day2.txt"), aoc::day2::part_1, aoc::day2::part_2, 2);
 	total_time += benchmark_day<std::string, N>(input::data_as_string("Input/day3.txt"), aoc::day3::part_1, aoc::day3::part_2, 3);
@@ -124,9 +125,10 @@ int main()
 	total_time += benchmark_day<std::string, N>(input::data_as_string("Input/day18.txt"), aoc::day18::part_1, aoc::day18::part_2, 18);
 	total_time += benchmark_day<std::string, 1>(input::data_as_string("Input/day19.txt"), aoc::day19::part_1, aoc::day19::part_2, 19);
 	total_time += benchmark_day<std::string, N>(input::data_as_string("Input/day20.txt"), aoc::day20::part_1, aoc::day20::part_2, 20);
-	*/
-#endif
 	total_time += benchmark_day<std::string, N>(input::data_as_string("Input/day21.txt"), aoc::day21::part_1, aoc::day21::part_2, 21);
+
+#endif
+	total_time += benchmark_day<std::string, N>(input::data_as_string("Input/day22.txt"), aoc::day22::part_1, aoc::day22::part_2, 22);
 
 	SetConsoleTextAttribute(hConsole, 2);
 	std::cout << "\t~~~~~~~~~~~~~~~~~~~~~~~~ Total ~~~~~~~~~~~~~~~~~~~~~~~\n";
